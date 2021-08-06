@@ -4,8 +4,12 @@ import rootEpic from "./epics";
 import rootReducer from "./reducer";
 
 export type RootState = ReturnType<typeof rootReducer>;
-export type AppEpic = Epic<AnyAction, AnyAction, RootState>;
 export type AppDispatch = typeof store.dispatch;
+export type AppEpic<OutAction extends AnyAction = AnyAction> = Epic<
+  AnyAction,
+  OutAction,
+  RootState
+>;
 
 const epicMiddleware = createEpicMiddleware<AnyAction, AnyAction, RootState>();
 
