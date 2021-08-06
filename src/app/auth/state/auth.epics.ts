@@ -1,14 +1,14 @@
 import { filter, map, mergeMap } from "rxjs/operators";
-import { AppEpic } from "../store";
-import * as loginService from "./auth.service";
-import { authActions } from "./auth.slice";
+import { AppEpic } from "../../state";
+import * as authService from "../auth.service";
+import * as authActions from "./auth.actions";
 
 const loginEpic$: AppEpic = (action$) =>
   action$.pipe(
     filter(authActions.login.match),
     mergeMap((action) => {
       console.log("action", action);
-      return loginService
+      return authService
         .login(action.payload)
         .pipe(map((result) => authActions.loginSuccess(result)));
     })

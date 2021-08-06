@@ -1,6 +1,6 @@
 import React from "react";
-import { authActions, authSelectors } from "../auth.slice";
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { authActions, authSelectors } from "../state";
+import { useAppDispatch, useAppSelector } from "../../state/hooks";
 
 const Login: React.FC = () => {
   const dispatch = useAppDispatch(),
