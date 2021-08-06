@@ -1,6 +1,6 @@
 import * as authActions from "./auth.actions";
-import authEpics from "./auth.epics";
+// import authEpics from "../login/state/login.epics";
 import authReducer from "./auth.reducer";
 import * as authSelectors from "./auth.selectors";
 
-export { authActions, authEpics, authSelectors, authReducer };
+export { authActions, authSelectors, authReducer };

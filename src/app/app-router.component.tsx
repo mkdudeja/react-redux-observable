@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./home/home.component";
 
 const LazyAccount = React.lazy(() =>
-  import("./auth/auth.component").then((module) => module)
+  import("./account/account.component").then((module) => module)
 );
 
 function AppRouterOutlet() {

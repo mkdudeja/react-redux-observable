@@ -1,3 +1,10 @@
+import { RequestState } from "../../shared";
+
+export interface LoginState {
+  loading: RequestState;
+  error: string;
+}
+
 export interface ILoginRequest {
   username: string;
   password: string;
